@@ -12,12 +12,25 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFFF4EDDB),
-        body: Container(),
+        body: Center(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            const Text(
+              'Click Count',
+              style: TextStyle(fontSize: 30),
+            ),
+            Text(
+              '$counter',
+              style: const TextStyle(fontSize: 30),
+            ),
+          ]),
+        ),
       ),
     );
   }
