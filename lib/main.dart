@@ -14,6 +14,8 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   int counter = 0;
 
+  void onClicked() {}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,6 +30,13 @@ class _AppState extends State<App> {
             Text(
               '$counter',
               style: const TextStyle(fontSize: 30),
+            ),
+            IconButton(
+              iconSize: 40,
+              onPressed: onClicked,
+              icon: const Icon(
+                Icons.add_box_rounded,
+              ),
             ),
           ]),
         ),
