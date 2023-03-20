@@ -54,9 +54,12 @@ class MyLargeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
+    return Text(
       'My Large Title',
-      style: TextStyle(fontSize: 30),
+      style: TextStyle(
+        fontSize: 30,
+        color: Theme.of(context).textTheme.titleLarge!.color,
+      ),
     );
   }
 }
