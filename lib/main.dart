@@ -12,13 +12,11 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  //int counter = 0;
-  List<int> numbers = [];
+  bool showTitle = true;
 
-  void onClicked() {
+  void toggleTitle() {
     setState(() {
-      //counter++;
-      numbers.add(numbers.length);
+      showTitle = !showTitle;
     });
   }
 
@@ -37,8 +35,11 @@ class _AppState extends State<App> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              MyLargeTitle(),
+            children: [
+              showTitle ? const MyLargeTitle() : const Text('nothing'),
+              IconButton(
+                  onPressed: toggleTitle,
+                  icon: const Icon(Icons.remove_red_eye)),
             ],
           ),
         ),
@@ -61,6 +62,12 @@ class _MyLargeTitleState extends State<MyLargeTitle> {
   void initState() {
     super.initState();
     print('initState!');
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print('dispose!');
   }
 
   @override
